@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:fl_chart/fl_chart.dart';
 import '../theme/app_colors.dart';
-import '../providers/health_provider.dart';
+import '../providers/enhanced_health_provider.dart';
 
 class StatsPage extends StatefulWidget {
   const StatsPage({super.key});
@@ -40,7 +40,7 @@ class _StatsPageState extends State<StatsPage> with SingleTickerProviderStateMix
     return Scaffold(
       backgroundColor: AppColors.background,
       body: SafeArea(
-        child: Consumer<HealthProvider>(
+        child: Consumer<EnhancedHealthProvider>(
           builder: (context, provider, child) {
             return SingleChildScrollView(
               padding: const EdgeInsets.all(24.0),
@@ -395,7 +395,7 @@ class _StatsPageState extends State<StatsPage> with SingleTickerProviderStateMix
     );
   }
 
-  Widget _buildSummaryCards(HealthProvider provider) {
+  Widget _buildSummaryCards(EnhancedHealthProvider provider) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [

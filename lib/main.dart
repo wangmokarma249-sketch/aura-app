@@ -2,9 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'screens/welcome_page.dart';
-import 'providers/health_provider.dart';
+import 'providers/enhanced_health_provider.dart';
+import 'services/storage_service.dart';
+import 'services/notification_service.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await StorageService.initialize();
+  await NotificationService.initialize();
+
   runApp(const AuraApp());
 }
 
@@ -14,7 +21,11 @@ class AuraApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (context) => HealthProvider(),
+      create: (context) {
+        final provider = EnhancedHealthProvider();
+        provider.initialize();
+        return provider;
+      },
       child: MaterialApp(
         title: 'Aura',
         debugShowCheckedModeBanner: false,

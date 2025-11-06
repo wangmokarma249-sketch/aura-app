@@ -33,12 +33,19 @@ class _ChatPageState extends State<ChatPage> {
   final Map<String, String> _responses = {
     'steps': 'A healthy target is around 8,000–10,000 steps per day. This helps improve cardiovascular health and maintain a healthy weight.',
     'water': 'Aim to drink 8 glasses (about 2 liters) of water daily. Staying hydrated helps with digestion, skin health, and energy levels.',
+    'glasses': 'Around 8 to 10 glasses is ideal for most adults. Listen to your body and drink more during exercise or hot weather.',
     'cycle': 'The average menstrual cycle is 28 days, but anywhere from 21-35 days is considered normal. Track your cycle to understand your body better.',
     'gut': 'Maintain gut health by eating fiber-rich foods, staying hydrated, managing stress, and getting enough sleep. Probiotics can also be beneficial.',
+    'poop': 'Healthy bowel movements are important for digestive health. Track your patterns and stay consistent with fiber intake and hydration.',
+    'timer': 'Timer started. Remember, consistency matters for digestive health! Take your time and stay relaxed.',
+    'bloat': 'Try drinking warm water and light exercise like walking. Avoid carbonated drinks and eat slowly to reduce bloating.',
+    'goal': 'You can set your own daily goals for steps, water intake, and other health metrics. What would you like to adjust?',
     'sleep': 'Adults should aim for 7-9 hours of quality sleep per night. Good sleep improves mood, energy, and overall health.',
+    '6 hours': 'For most adults, 7–9 hours is recommended for optimal recovery. Try to get at least 7 hours regularly.',
     'diet': 'A balanced diet includes fruits, vegetables, whole grains, lean proteins, and healthy fats. Eat a variety of colorful foods for optimal nutrition.',
     'exercise': 'Aim for at least 150 minutes of moderate aerobic activity or 75 minutes of vigorous activity per week, plus strength training twice a week.',
     'stress': 'Manage stress through meditation, deep breathing, regular exercise, adequate sleep, and connecting with loved ones. Don\'t hesitate to seek professional help if needed.',
+    'track': 'I can help you track steps, water intake, cycle patterns, and gut health. What would you like to monitor today?',
     'default': 'I\'m here to help with health-related questions about steps, water intake, cycle tracking, gut health, sleep, diet, exercise, and stress management. What would you like to know?',
   };
 

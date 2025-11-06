@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import '../theme/app_colors.dart';
-import '../providers/health_provider.dart';
+import '../providers/enhanced_health_provider.dart';
 import '../models/user_data.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -23,7 +23,7 @@ class _ProfilePageState extends State<ProfilePage> {
   @override
   void initState() {
     super.initState();
-    final userData = context.read<HealthProvider>().userData;
+    final userData = context.read<EnhancedHealthProvider>().userData;
     _nameController = TextEditingController(text: userData.name);
     _ageController = TextEditingController(text: userData.age.toString());
     _heightController = TextEditingController(text: userData.height.toString());
@@ -50,7 +50,7 @@ class _ProfilePageState extends State<ProfilePage> {
         gender: _selectedGender,
       );
 
-      context.read<HealthProvider>().updateUserData(newUserData);
+      context.read<EnhancedHealthProvider>().updateUserData(newUserData);
 
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(

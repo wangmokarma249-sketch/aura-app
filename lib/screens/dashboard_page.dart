@@ -3,11 +3,11 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import '../theme/app_colors.dart';
 import '../widgets/health_card.dart';
-import '../providers/health_provider.dart';
+import '../providers/enhanced_health_provider.dart';
 import 'details/steps_detail_page.dart';
 import 'details/water_detail_page.dart';
 import 'details/cycle_detail_page.dart';
-import 'details/gut_detail_page.dart';
+import 'details/gut_detail_page_enhanced.dart';
 import 'stats_page.dart';
 import 'profile_page.dart';
 import 'chat_page.dart';
@@ -122,7 +122,7 @@ class HomePage extends StatelessWidget {
           ),
         ],
       ),
-      body: Consumer<HealthProvider>(
+      body: Consumer<EnhancedHealthProvider>(
         builder: (context, provider, child) {
           final metrics = provider.metrics;
           final stepsProgress = (metrics.steps / metrics.stepsGoal).clamp(0.0, 1.0);
@@ -230,7 +230,7 @@ class HomePage extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const GutDetailPage(),
+                            builder: (context) => const GutDetailPageEnhanced(),
                           ),
                         );
                       },
